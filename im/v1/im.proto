@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package im.basic;
+option go_package = "grpc";
+
+message Empty{}
+
+message SendMessageReq{
+  string token = 1;
+  bytes data =2;
+}
+
+message SendMessageReply {}
+
+
+message OnlinesReply{
+  int64 number =1 ;
+}
+
+message BroadcastReq{
+  bytes data =1;
+}
+
+message BroadcastReply{}
+
+
+
+
+service Basic {
+  // Ping Service
+  rpc Ping(Empty) returns(Empty);
+  rpc Onliens(Empty)returns (OnlinesReply);
+  rpc SendMessage(SendMessageReq) returns (SendMessageReply);
+  rpc Broadcast(BroadcastReq) returns (BroadcastReply);
+}
