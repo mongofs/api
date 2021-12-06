@@ -24,6 +24,12 @@ message BroadcastReq{
 message BroadcastReply{}
 
 
+message PushToClient{
+  int64 sid=1 ;
+  bytes msg =2 ;
+}
+
+
 
 
 service Basic {
