@@ -122,6 +122,61 @@ func (x *SendMessageReq) GetData() []byte {
 	return nil
 }
 
+type SendMessageToMultipleReq struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Token []string `protobuf:"bytes,1,rep,name=token,proto3" json:"token,omitempty"`
+	Data  []byte   `protobuf:"bytes,2,opt,name=data,proto3" json:"data,omitempty"`
+}
+
+func (x *SendMessageToMultipleReq) Reset() {
+	*x = SendMessageToMultipleReq{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_im_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SendMessageToMultipleReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SendMessageToMultipleReq) ProtoMessage() {}
+
+func (x *SendMessageToMultipleReq) ProtoReflect() protoreflect.Message {
+	mi := &file_im_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SendMessageToMultipleReq.ProtoReflect.Descriptor instead.
+func (*SendMessageToMultipleReq) Descriptor() ([]byte, []int) {
+	return file_im_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *SendMessageToMultipleReq) GetToken() []string {
+	if x != nil {
+		return x.Token
+	}
+	return nil
+}
+
+func (x *SendMessageToMultipleReq) GetData() []byte {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
 type SendMessageReply struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -131,7 +186,7 @@ type SendMessageReply struct {
 func (x *SendMessageReply) Reset() {
 	*x = SendMessageReply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_im_proto_msgTypes[2]
+		mi := &file_im_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -144,7 +199,7 @@ func (x *SendMessageReply) String() string {
 func (*SendMessageReply) ProtoMessage() {}
 
 func (x *SendMessageReply) ProtoReflect() protoreflect.Message {
-	mi := &file_im_proto_msgTypes[2]
+	mi := &file_im_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -157,7 +212,7 @@ func (x *SendMessageReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendMessageReply.ProtoReflect.Descriptor instead.
 func (*SendMessageReply) Descriptor() ([]byte, []int) {
-	return file_im_proto_rawDescGZIP(), []int{2}
+	return file_im_proto_rawDescGZIP(), []int{3}
 }
 
 type OnlinesReply struct {
@@ -171,7 +226,7 @@ type OnlinesReply struct {
 func (x *OnlinesReply) Reset() {
 	*x = OnlinesReply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_im_proto_msgTypes[3]
+		mi := &file_im_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -184,7 +239,7 @@ func (x *OnlinesReply) String() string {
 func (*OnlinesReply) ProtoMessage() {}
 
 func (x *OnlinesReply) ProtoReflect() protoreflect.Message {
-	mi := &file_im_proto_msgTypes[3]
+	mi := &file_im_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -197,7 +252,7 @@ func (x *OnlinesReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OnlinesReply.ProtoReflect.Descriptor instead.
 func (*OnlinesReply) Descriptor() ([]byte, []int) {
-	return file_im_proto_rawDescGZIP(), []int{3}
+	return file_im_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *OnlinesReply) GetNumber() int64 {
@@ -218,7 +273,7 @@ type BroadcastReq struct {
 func (x *BroadcastReq) Reset() {
 	*x = BroadcastReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_im_proto_msgTypes[4]
+		mi := &file_im_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -231,7 +286,7 @@ func (x *BroadcastReq) String() string {
 func (*BroadcastReq) ProtoMessage() {}
 
 func (x *BroadcastReq) ProtoReflect() protoreflect.Message {
-	mi := &file_im_proto_msgTypes[4]
+	mi := &file_im_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -244,7 +299,7 @@ func (x *BroadcastReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BroadcastReq.ProtoReflect.Descriptor instead.
 func (*BroadcastReq) Descriptor() ([]byte, []int) {
-	return file_im_proto_rawDescGZIP(), []int{4}
+	return file_im_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *BroadcastReq) GetData() []byte {
@@ -263,7 +318,7 @@ type BroadcastReply struct {
 func (x *BroadcastReply) Reset() {
 	*x = BroadcastReply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_im_proto_msgTypes[5]
+		mi := &file_im_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -276,7 +331,7 @@ func (x *BroadcastReply) String() string {
 func (*BroadcastReply) ProtoMessage() {}
 
 func (x *BroadcastReply) ProtoReflect() protoreflect.Message {
-	mi := &file_im_proto_msgTypes[5]
+	mi := &file_im_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -289,7 +344,7 @@ func (x *BroadcastReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BroadcastReply.ProtoReflect.Descriptor instead.
 func (*BroadcastReply) Descriptor() ([]byte, []int) {
-	return file_im_proto_rawDescGZIP(), []int{5}
+	return file_im_proto_rawDescGZIP(), []int{6}
 }
 
 type PushToClient struct {
@@ -304,7 +359,7 @@ type PushToClient struct {
 func (x *PushToClient) Reset() {
 	*x = PushToClient{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_im_proto_msgTypes[6]
+		mi := &file_im_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -317,7 +372,7 @@ func (x *PushToClient) String() string {
 func (*PushToClient) ProtoMessage() {}
 
 func (x *PushToClient) ProtoReflect() protoreflect.Message {
-	mi := &file_im_proto_msgTypes[6]
+	mi := &file_im_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -330,7 +385,7 @@ func (x *PushToClient) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PushToClient.ProtoReflect.Descriptor instead.
 func (*PushToClient) Descriptor() ([]byte, []int) {
-	return file_im_proto_rawDescGZIP(), []int{6}
+	return file_im_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *PushToClient) GetSid() int64 {
@@ -355,33 +410,43 @@ var file_im_proto_rawDesc = []byte{
 	0x0e, 0x53, 0x65, 0x6e, 0x64, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x65, 0x71, 0x12,
 	0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05,
 	0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x12, 0x0a, 0x04, 0x64, 0x61, 0x74, 0x61, 0x18, 0x02, 0x20,
-	0x01, 0x28, 0x0c, 0x52, 0x04, 0x64, 0x61, 0x74, 0x61, 0x22, 0x12, 0x0a, 0x10, 0x53, 0x65, 0x6e,
-	0x64, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x22, 0x26, 0x0a,
-	0x0c, 0x4f, 0x6e, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x12, 0x16, 0x0a,
-	0x06, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x06, 0x6e,
-	0x75, 0x6d, 0x62, 0x65, 0x72, 0x22, 0x22, 0x0a, 0x0c, 0x42, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61,
-	0x73, 0x74, 0x52, 0x65, 0x71, 0x12, 0x12, 0x0a, 0x04, 0x64, 0x61, 0x74, 0x61, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x0c, 0x52, 0x04, 0x64, 0x61, 0x74, 0x61, 0x22, 0x10, 0x0a, 0x0e, 0x42, 0x72, 0x6f,
-	0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x22, 0x32, 0x0a, 0x0c, 0x50,
-	0x75, 0x73, 0x68, 0x54, 0x6f, 0x43, 0x6c, 0x69, 0x65, 0x6e, 0x74, 0x12, 0x10, 0x0a, 0x03, 0x73,
-	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x03, 0x73, 0x69, 0x64, 0x12, 0x10, 0x0a,
-	0x03, 0x6d, 0x73, 0x67, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x32,
-	0xe9, 0x01, 0x0a, 0x05, 0x42, 0x61, 0x73, 0x69, 0x63, 0x12, 0x28, 0x0a, 0x04, 0x50, 0x69, 0x6e,
-	0x67, 0x12, 0x0f, 0x2e, 0x69, 0x6d, 0x2e, 0x62, 0x61, 0x73, 0x69, 0x63, 0x2e, 0x45, 0x6d, 0x70,
-	0x74, 0x79, 0x1a, 0x0f, 0x2e, 0x69, 0x6d, 0x2e, 0x62, 0x61, 0x73, 0x69, 0x63, 0x2e, 0x45, 0x6d,
-	0x70, 0x74, 0x79, 0x12, 0x32, 0x0a, 0x07, 0x4f, 0x6e, 0x6c, 0x69, 0x65, 0x6e, 0x73, 0x12, 0x0f,
-	0x2e, 0x69, 0x6d, 0x2e, 0x62, 0x61, 0x73, 0x69, 0x63, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x1a,
-	0x16, 0x2e, 0x69, 0x6d, 0x2e, 0x62, 0x61, 0x73, 0x69, 0x63, 0x2e, 0x4f, 0x6e, 0x6c, 0x69, 0x6e,
-	0x65, 0x73, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x12, 0x43, 0x0a, 0x0b, 0x53, 0x65, 0x6e, 0x64, 0x4d,
-	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x12, 0x18, 0x2e, 0x69, 0x6d, 0x2e, 0x62, 0x61, 0x73, 0x69,
-	0x63, 0x2e, 0x53, 0x65, 0x6e, 0x64, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x65, 0x71,
-	0x1a, 0x1a, 0x2e, 0x69, 0x6d, 0x2e, 0x62, 0x61, 0x73, 0x69, 0x63, 0x2e, 0x53, 0x65, 0x6e, 0x64,
-	0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x12, 0x3d, 0x0a, 0x09,
-	0x42, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x12, 0x16, 0x2e, 0x69, 0x6d, 0x2e, 0x62,
-	0x61, 0x73, 0x69, 0x63, 0x2e, 0x42, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x52, 0x65,
-	0x71, 0x1a, 0x18, 0x2e, 0x69, 0x6d, 0x2e, 0x62, 0x61, 0x73, 0x69, 0x63, 0x2e, 0x42, 0x72, 0x6f,
-	0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x42, 0x06, 0x5a, 0x04, 0x67,
-	0x72, 0x70, 0x63, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x01, 0x28, 0x0c, 0x52, 0x04, 0x64, 0x61, 0x74, 0x61, 0x22, 0x44, 0x0a, 0x18, 0x53, 0x65, 0x6e,
+	0x64, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x54, 0x6f, 0x4d, 0x75, 0x6c, 0x74, 0x69, 0x70,
+	0x6c, 0x65, 0x52, 0x65, 0x71, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x01,
+	0x20, 0x03, 0x28, 0x09, 0x52, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x12, 0x0a, 0x04, 0x64,
+	0x61, 0x74, 0x61, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x04, 0x64, 0x61, 0x74, 0x61, 0x22,
+	0x12, 0x0a, 0x10, 0x53, 0x65, 0x6e, 0x64, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x65,
+	0x70, 0x6c, 0x79, 0x22, 0x26, 0x0a, 0x0c, 0x4f, 0x6e, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x52, 0x65,
+	0x70, 0x6c, 0x79, 0x12, 0x16, 0x0a, 0x06, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x03, 0x52, 0x06, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x22, 0x22, 0x0a, 0x0c, 0x42,
+	0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x52, 0x65, 0x71, 0x12, 0x12, 0x0a, 0x04, 0x64,
+	0x61, 0x74, 0x61, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x04, 0x64, 0x61, 0x74, 0x61, 0x22,
+	0x10, 0x0a, 0x0e, 0x42, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x52, 0x65, 0x70, 0x6c,
+	0x79, 0x22, 0x32, 0x0a, 0x0c, 0x50, 0x75, 0x73, 0x68, 0x54, 0x6f, 0x43, 0x6c, 0x69, 0x65, 0x6e,
+	0x74, 0x12, 0x10, 0x0a, 0x03, 0x73, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x03,
+	0x73, 0x69, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0c,
+	0x52, 0x03, 0x6d, 0x73, 0x67, 0x32, 0xc2, 0x02, 0x0a, 0x05, 0x42, 0x61, 0x73, 0x69, 0x63, 0x12,
+	0x28, 0x0a, 0x04, 0x50, 0x69, 0x6e, 0x67, 0x12, 0x0f, 0x2e, 0x69, 0x6d, 0x2e, 0x62, 0x61, 0x73,
+	0x69, 0x63, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x1a, 0x0f, 0x2e, 0x69, 0x6d, 0x2e, 0x62, 0x61,
+	0x73, 0x69, 0x63, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x12, 0x32, 0x0a, 0x07, 0x4f, 0x6e, 0x6c,
+	0x69, 0x65, 0x6e, 0x73, 0x12, 0x0f, 0x2e, 0x69, 0x6d, 0x2e, 0x62, 0x61, 0x73, 0x69, 0x63, 0x2e,
+	0x45, 0x6d, 0x70, 0x74, 0x79, 0x1a, 0x16, 0x2e, 0x69, 0x6d, 0x2e, 0x62, 0x61, 0x73, 0x69, 0x63,
+	0x2e, 0x4f, 0x6e, 0x6c, 0x69, 0x6e, 0x65, 0x73, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x12, 0x43, 0x0a,
+	0x0b, 0x53, 0x65, 0x6e, 0x64, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x12, 0x18, 0x2e, 0x69,
+	0x6d, 0x2e, 0x62, 0x61, 0x73, 0x69, 0x63, 0x2e, 0x53, 0x65, 0x6e, 0x64, 0x4d, 0x65, 0x73, 0x73,
+	0x61, 0x67, 0x65, 0x52, 0x65, 0x71, 0x1a, 0x1a, 0x2e, 0x69, 0x6d, 0x2e, 0x62, 0x61, 0x73, 0x69,
+	0x63, 0x2e, 0x53, 0x65, 0x6e, 0x64, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x65, 0x70,
+	0x6c, 0x79, 0x12, 0x57, 0x0a, 0x15, 0x53, 0x65, 0x6e, 0x64, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67,
+	0x65, 0x54, 0x6f, 0x4d, 0x75, 0x6c, 0x74, 0x69, 0x70, 0x6c, 0x65, 0x12, 0x22, 0x2e, 0x69, 0x6d,
+	0x2e, 0x62, 0x61, 0x73, 0x69, 0x63, 0x2e, 0x53, 0x65, 0x6e, 0x64, 0x4d, 0x65, 0x73, 0x73, 0x61,
+	0x67, 0x65, 0x54, 0x6f, 0x4d, 0x75, 0x6c, 0x74, 0x69, 0x70, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x1a,
+	0x1a, 0x2e, 0x69, 0x6d, 0x2e, 0x62, 0x61, 0x73, 0x69, 0x63, 0x2e, 0x53, 0x65, 0x6e, 0x64, 0x4d,
+	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x12, 0x3d, 0x0a, 0x09, 0x42,
+	0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x12, 0x16, 0x2e, 0x69, 0x6d, 0x2e, 0x62, 0x61,
+	0x73, 0x69, 0x63, 0x2e, 0x42, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x52, 0x65, 0x71,
+	0x1a, 0x18, 0x2e, 0x69, 0x6d, 0x2e, 0x62, 0x61, 0x73, 0x69, 0x63, 0x2e, 0x42, 0x72, 0x6f, 0x61,
+	0x64, 0x63, 0x61, 0x73, 0x74, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x42, 0x06, 0x5a, 0x04, 0x67, 0x72,
+	0x70, 0x63, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -396,27 +461,30 @@ func file_im_proto_rawDescGZIP() []byte {
 	return file_im_proto_rawDescData
 }
 
-var file_im_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_im_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_im_proto_goTypes = []interface{}{
-	(*Empty)(nil),            // 0: im.basic.Empty
-	(*SendMessageReq)(nil),   // 1: im.basic.SendMessageReq
-	(*SendMessageReply)(nil), // 2: im.basic.SendMessageReply
-	(*OnlinesReply)(nil),     // 3: im.basic.OnlinesReply
-	(*BroadcastReq)(nil),     // 4: im.basic.BroadcastReq
-	(*BroadcastReply)(nil),   // 5: im.basic.BroadcastReply
-	(*PushToClient)(nil),     // 6: im.basic.PushToClient
+	(*Empty)(nil),                    // 0: im.basic.Empty
+	(*SendMessageReq)(nil),           // 1: im.basic.SendMessageReq
+	(*SendMessageToMultipleReq)(nil), // 2: im.basic.SendMessageToMultipleReq
+	(*SendMessageReply)(nil),         // 3: im.basic.SendMessageReply
+	(*OnlinesReply)(nil),             // 4: im.basic.OnlinesReply
+	(*BroadcastReq)(nil),             // 5: im.basic.BroadcastReq
+	(*BroadcastReply)(nil),           // 6: im.basic.BroadcastReply
+	(*PushToClient)(nil),             // 7: im.basic.PushToClient
 }
 var file_im_proto_depIdxs = []int32{
 	0, // 0: im.basic.Basic.Ping:input_type -> im.basic.Empty
 	0, // 1: im.basic.Basic.Onliens:input_type -> im.basic.Empty
 	1, // 2: im.basic.Basic.SendMessage:input_type -> im.basic.SendMessageReq
-	4, // 3: im.basic.Basic.Broadcast:input_type -> im.basic.BroadcastReq
-	0, // 4: im.basic.Basic.Ping:output_type -> im.basic.Empty
-	3, // 5: im.basic.Basic.Onliens:output_type -> im.basic.OnlinesReply
-	2, // 6: im.basic.Basic.SendMessage:output_type -> im.basic.SendMessageReply
-	5, // 7: im.basic.Basic.Broadcast:output_type -> im.basic.BroadcastReply
-	4, // [4:8] is the sub-list for method output_type
-	0, // [0:4] is the sub-list for method input_type
+	2, // 3: im.basic.Basic.SendMessageToMultiple:input_type -> im.basic.SendMessageToMultipleReq
+	5, // 4: im.basic.Basic.Broadcast:input_type -> im.basic.BroadcastReq
+	0, // 5: im.basic.Basic.Ping:output_type -> im.basic.Empty
+	4, // 6: im.basic.Basic.Onliens:output_type -> im.basic.OnlinesReply
+	3, // 7: im.basic.Basic.SendMessage:output_type -> im.basic.SendMessageReply
+	3, // 8: im.basic.Basic.SendMessageToMultiple:output_type -> im.basic.SendMessageReply
+	6, // 9: im.basic.Basic.Broadcast:output_type -> im.basic.BroadcastReply
+	5, // [5:10] is the sub-list for method output_type
+	0, // [0:5] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -453,7 +521,7 @@ func file_im_proto_init() {
 			}
 		}
 		file_im_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SendMessageReply); i {
+			switch v := v.(*SendMessageToMultipleReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -465,7 +533,7 @@ func file_im_proto_init() {
 			}
 		}
 		file_im_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*OnlinesReply); i {
+			switch v := v.(*SendMessageReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -477,7 +545,7 @@ func file_im_proto_init() {
 			}
 		}
 		file_im_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*BroadcastReq); i {
+			switch v := v.(*OnlinesReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -489,7 +557,7 @@ func file_im_proto_init() {
 			}
 		}
 		file_im_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*BroadcastReply); i {
+			switch v := v.(*BroadcastReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -501,6 +569,18 @@ func file_im_proto_init() {
 			}
 		}
 		file_im_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*BroadcastReply); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_im_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PushToClient); i {
 			case 0:
 				return &v.state
@@ -519,7 +599,7 @@ func file_im_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_im_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   7,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -547,8 +627,13 @@ const _ = grpc.SupportPackageIsVersion6
 type BasicClient interface {
 	// Ping Service
 	Ping(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*Empty, error)
+	// 查看在线用户数量
 	Onliens(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*OnlinesReply, error)
+	// 发送消息给某个用户
 	SendMessage(ctx context.Context, in *SendMessageReq, opts ...grpc.CallOption) (*SendMessageReply, error)
+	// 发送消息给多个用户
+	SendMessageToMultiple(ctx context.Context, in *SendMessageToMultipleReq, opts ...grpc.CallOption) (*SendMessageReply, error)
+	// 广播
 	Broadcast(ctx context.Context, in *BroadcastReq, opts ...grpc.CallOption) (*BroadcastReply, error)
 }
 
@@ -587,6 +672,15 @@ func (c *basicClient) SendMessage(ctx context.Context, in *SendMessageReq, opts 
 	return out, nil
 }
 
+func (c *basicClient) SendMessageToMultiple(ctx context.Context, in *SendMessageToMultipleReq, opts ...grpc.CallOption) (*SendMessageReply, error) {
+	out := new(SendMessageReply)
+	err := c.cc.Invoke(ctx, "/im.basic.Basic/SendMessageToMultiple", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *basicClient) Broadcast(ctx context.Context, in *BroadcastReq, opts ...grpc.CallOption) (*BroadcastReply, error) {
 	out := new(BroadcastReply)
 	err := c.cc.Invoke(ctx, "/im.basic.Basic/Broadcast", in, out, opts...)
@@ -600,8 +694,13 @@ func (c *basicClient) Broadcast(ctx context.Context, in *BroadcastReq, opts ...g
 type BasicServer interface {
 	// Ping Service
 	Ping(context.Context, *Empty) (*Empty, error)
+	// 查看在线用户数量
 	Onliens(context.Context, *Empty) (*OnlinesReply, error)
+	// 发送消息给某个用户
 	SendMessage(context.Context, *SendMessageReq) (*SendMessageReply, error)
+	// 发送消息给多个用户
+	SendMessageToMultiple(context.Context, *SendMessageToMultipleReq) (*SendMessageReply, error)
+	// 广播
 	Broadcast(context.Context, *BroadcastReq) (*BroadcastReply, error)
 }
 
@@ -617,6 +716,9 @@ func (*UnimplementedBasicServer) Onliens(context.Context, *Empty) (*OnlinesReply
 }
 func (*UnimplementedBasicServer) SendMessage(context.Context, *SendMessageReq) (*SendMessageReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SendMessage not implemented")
+}
+func (*UnimplementedBasicServer) SendMessageToMultiple(context.Context, *SendMessageToMultipleReq) (*SendMessageReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SendMessageToMultiple not implemented")
 }
 func (*UnimplementedBasicServer) Broadcast(context.Context, *BroadcastReq) (*BroadcastReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Broadcast not implemented")
@@ -680,6 +782,24 @@ func _Basic_SendMessage_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Basic_SendMessageToMultiple_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SendMessageToMultipleReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BasicServer).SendMessageToMultiple(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/im.basic.Basic/SendMessageToMultiple",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BasicServer).SendMessageToMultiple(ctx, req.(*SendMessageToMultipleReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Basic_Broadcast_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(BroadcastReq)
 	if err := dec(in); err != nil {
@@ -713,6 +833,10 @@ var _Basic_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SendMessage",
 			Handler:    _Basic_SendMessage_Handler,
+		},
+		{
+			MethodName: "SendMessageToMultiple",
+			Handler:    _Basic_SendMessageToMultiple_Handler,
 		},
 		{
 			MethodName: "Broadcast",

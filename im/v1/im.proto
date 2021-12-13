@@ -10,6 +10,11 @@ message SendMessageReq{
   bytes data =2;
 }
 
+message SendMessageToMultipleReq {
+  repeated string token =1;
+  bytes data =2;
+}
+
 message SendMessageReply {}
 
 
@@ -35,7 +40,12 @@ message PushToClient{
 service Basic {
   // Ping Service
   rpc Ping(Empty) returns(Empty);
+  // 查看在线用户数量
   rpc Onliens(Empty)returns (OnlinesReply);
+  // 发送消息给某个用户
   rpc SendMessage(SendMessageReq) returns (SendMessageReply);
+  // 发送消息给多个用户
+  rpc SendMessageToMultiple(SendMessageToMultipleReq) returns (SendMessageReply);
+  // 广播
   rpc Broadcast(BroadcastReq) returns (BroadcastReply);
 }
