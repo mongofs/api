@@ -37,6 +37,12 @@ message PushToClient{
 }
 
 
+// target1 ,content1
+// target2 ,content2
+message BroadcastByTargetReq{
+  map<string,bytes> data  =1;
+}
+
 
 
 service Basic {
@@ -50,4 +56,6 @@ service Basic {
   rpc SendMessageToMultiple(SendMessageToMultipleReq) returns (SendMessageReply);
   // 广播
   rpc Broadcast(BroadcastReq) returns (BroadcastReply);
+  // 新增支持
+  rpc BroadcastByTarget(BroadcastByTargetReq) returns (BroadcastReply);
 }

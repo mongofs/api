@@ -411,6 +411,55 @@ func (x *PushToClient) GetMsg() []byte {
 	return nil
 }
 
+// target1 ,content1
+// target2 ,content2
+type BroadcastByTargetReq struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Data map[string][]byte `protobuf:"bytes,1,rep,name=data,proto3" json:"data,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+}
+
+func (x *BroadcastByTargetReq) Reset() {
+	*x = BroadcastByTargetReq{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_im_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *BroadcastByTargetReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*BroadcastByTargetReq) ProtoMessage() {}
+
+func (x *BroadcastByTargetReq) ProtoReflect() protoreflect.Message {
+	mi := &file_im_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use BroadcastByTargetReq.ProtoReflect.Descriptor instead.
+func (*BroadcastByTargetReq) Descriptor() ([]byte, []int) {
+	return file_im_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *BroadcastByTargetReq) GetData() map[string][]byte {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
 var File_im_proto protoreflect.FileDescriptor
 
 var file_im_proto_rawDesc = []byte{
@@ -435,7 +484,16 @@ var file_im_proto_rawDesc = []byte{
 	0x04, 0x73, 0x69, 0x7a, 0x65, 0x22, 0x32, 0x0a, 0x0c, 0x50, 0x75, 0x73, 0x68, 0x54, 0x6f, 0x43,
 	0x6c, 0x69, 0x65, 0x6e, 0x74, 0x12, 0x10, 0x0a, 0x03, 0x73, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
 	0x28, 0x03, 0x52, 0x03, 0x73, 0x69, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18, 0x02,
-	0x20, 0x01, 0x28, 0x0c, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x32, 0xc2, 0x02, 0x0a, 0x05, 0x42, 0x61,
+	0x20, 0x01, 0x28, 0x0c, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x22, 0x8d, 0x01, 0x0a, 0x14, 0x42, 0x72,
+	0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x42, 0x79, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x52,
+	0x65, 0x71, 0x12, 0x3c, 0x0a, 0x04, 0x64, 0x61, 0x74, 0x61, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b,
+	0x32, 0x28, 0x2e, 0x69, 0x6d, 0x2e, 0x62, 0x61, 0x73, 0x69, 0x63, 0x2e, 0x42, 0x72, 0x6f, 0x61,
+	0x64, 0x63, 0x61, 0x73, 0x74, 0x42, 0x79, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74, 0x52, 0x65, 0x71,
+	0x2e, 0x44, 0x61, 0x74, 0x61, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x52, 0x04, 0x64, 0x61, 0x74, 0x61,
+	0x1a, 0x37, 0x0a, 0x09, 0x44, 0x61, 0x74, 0x61, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a,
+	0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12,
+	0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x05,
+	0x76, 0x61, 0x6c, 0x75, 0x65, 0x3a, 0x02, 0x38, 0x01, 0x32, 0x91, 0x03, 0x0a, 0x05, 0x42, 0x61,
 	0x73, 0x69, 0x63, 0x12, 0x28, 0x0a, 0x04, 0x50, 0x69, 0x6e, 0x67, 0x12, 0x0f, 0x2e, 0x69, 0x6d,
 	0x2e, 0x62, 0x61, 0x73, 0x69, 0x63, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x1a, 0x0f, 0x2e, 0x69,
 	0x6d, 0x2e, 0x62, 0x61, 0x73, 0x69, 0x63, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x12, 0x32, 0x0a,
@@ -455,8 +513,13 @@ var file_im_proto_rawDesc = []byte{
 	0x3d, 0x0a, 0x09, 0x42, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x12, 0x16, 0x2e, 0x69,
 	0x6d, 0x2e, 0x62, 0x61, 0x73, 0x69, 0x63, 0x2e, 0x42, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73,
 	0x74, 0x52, 0x65, 0x71, 0x1a, 0x18, 0x2e, 0x69, 0x6d, 0x2e, 0x62, 0x61, 0x73, 0x69, 0x63, 0x2e,
-	0x42, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x42, 0x06,
-	0x5a, 0x04, 0x67, 0x72, 0x70, 0x63, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x42, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x12, 0x4d,
+	0x0a, 0x11, 0x42, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x42, 0x79, 0x54, 0x61, 0x72,
+	0x67, 0x65, 0x74, 0x12, 0x1e, 0x2e, 0x69, 0x6d, 0x2e, 0x62, 0x61, 0x73, 0x69, 0x63, 0x2e, 0x42,
+	0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x42, 0x79, 0x54, 0x61, 0x72, 0x67, 0x65, 0x74,
+	0x52, 0x65, 0x71, 0x1a, 0x18, 0x2e, 0x69, 0x6d, 0x2e, 0x62, 0x61, 0x73, 0x69, 0x63, 0x2e, 0x42,
+	0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x42, 0x06, 0x5a,
+	0x04, 0x67, 0x72, 0x70, 0x63, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -471,7 +534,7 @@ func file_im_proto_rawDescGZIP() []byte {
 	return file_im_proto_rawDescData
 }
 
-var file_im_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_im_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_im_proto_goTypes = []interface{}{
 	(*Empty)(nil),                    // 0: im.basic.Empty
 	(*SendMessageReq)(nil),           // 1: im.basic.SendMessageReq
@@ -481,23 +544,28 @@ var file_im_proto_goTypes = []interface{}{
 	(*BroadcastReq)(nil),             // 5: im.basic.BroadcastReq
 	(*BroadcastReply)(nil),           // 6: im.basic.BroadcastReply
 	(*PushToClient)(nil),             // 7: im.basic.PushToClient
+	(*BroadcastByTargetReq)(nil),     // 8: im.basic.BroadcastByTargetReq
+	nil,                              // 9: im.basic.BroadcastByTargetReq.DataEntry
 }
 var file_im_proto_depIdxs = []int32{
-	0, // 0: im.basic.Basic.Ping:input_type -> im.basic.Empty
-	0, // 1: im.basic.Basic.Onliens:input_type -> im.basic.Empty
-	1, // 2: im.basic.Basic.SendMessage:input_type -> im.basic.SendMessageReq
-	2, // 3: im.basic.Basic.SendMessageToMultiple:input_type -> im.basic.SendMessageToMultipleReq
-	5, // 4: im.basic.Basic.Broadcast:input_type -> im.basic.BroadcastReq
-	0, // 5: im.basic.Basic.Ping:output_type -> im.basic.Empty
-	4, // 6: im.basic.Basic.Onliens:output_type -> im.basic.OnlinesReply
-	3, // 7: im.basic.Basic.SendMessage:output_type -> im.basic.SendMessageReply
-	3, // 8: im.basic.Basic.SendMessageToMultiple:output_type -> im.basic.SendMessageReply
-	6, // 9: im.basic.Basic.Broadcast:output_type -> im.basic.BroadcastReply
-	5, // [5:10] is the sub-list for method output_type
-	0, // [0:5] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	9, // 0: im.basic.BroadcastByTargetReq.data:type_name -> im.basic.BroadcastByTargetReq.DataEntry
+	0, // 1: im.basic.Basic.Ping:input_type -> im.basic.Empty
+	0, // 2: im.basic.Basic.Onliens:input_type -> im.basic.Empty
+	1, // 3: im.basic.Basic.SendMessage:input_type -> im.basic.SendMessageReq
+	2, // 4: im.basic.Basic.SendMessageToMultiple:input_type -> im.basic.SendMessageToMultipleReq
+	5, // 5: im.basic.Basic.Broadcast:input_type -> im.basic.BroadcastReq
+	8, // 6: im.basic.Basic.BroadcastByTarget:input_type -> im.basic.BroadcastByTargetReq
+	0, // 7: im.basic.Basic.Ping:output_type -> im.basic.Empty
+	4, // 8: im.basic.Basic.Onliens:output_type -> im.basic.OnlinesReply
+	3, // 9: im.basic.Basic.SendMessage:output_type -> im.basic.SendMessageReply
+	3, // 10: im.basic.Basic.SendMessageToMultiple:output_type -> im.basic.SendMessageReply
+	6, // 11: im.basic.Basic.Broadcast:output_type -> im.basic.BroadcastReply
+	6, // 12: im.basic.Basic.BroadcastByTarget:output_type -> im.basic.BroadcastReply
+	7, // [7:13] is the sub-list for method output_type
+	1, // [1:7] is the sub-list for method input_type
+	1, // [1:1] is the sub-list for extension type_name
+	1, // [1:1] is the sub-list for extension extendee
+	0, // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_im_proto_init() }
@@ -602,6 +670,18 @@ func file_im_proto_init() {
 				return nil
 			}
 		}
+		file_im_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*BroadcastByTargetReq); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -609,7 +689,7 @@ func file_im_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_im_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   8,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -645,6 +725,8 @@ type BasicClient interface {
 	SendMessageToMultiple(ctx context.Context, in *SendMessageToMultipleReq, opts ...grpc.CallOption) (*SendMessageReply, error)
 	// 广播
 	Broadcast(ctx context.Context, in *BroadcastReq, opts ...grpc.CallOption) (*BroadcastReply, error)
+	// 新增支持
+	BroadcastByTarget(ctx context.Context, in *BroadcastByTargetReq, opts ...grpc.CallOption) (*BroadcastReply, error)
 }
 
 type basicClient struct {
@@ -700,6 +782,15 @@ func (c *basicClient) Broadcast(ctx context.Context, in *BroadcastReq, opts ...g
 	return out, nil
 }
 
+func (c *basicClient) BroadcastByTarget(ctx context.Context, in *BroadcastByTargetReq, opts ...grpc.CallOption) (*BroadcastReply, error) {
+	out := new(BroadcastReply)
+	err := c.cc.Invoke(ctx, "/im.basic.Basic/BroadcastByTarget", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // BasicServer is the server API for Basic service.
 type BasicServer interface {
 	// Ping Service
@@ -712,6 +803,8 @@ type BasicServer interface {
 	SendMessageToMultiple(context.Context, *SendMessageToMultipleReq) (*SendMessageReply, error)
 	// 广播
 	Broadcast(context.Context, *BroadcastReq) (*BroadcastReply, error)
+	// 新增支持
+	BroadcastByTarget(context.Context, *BroadcastByTargetReq) (*BroadcastReply, error)
 }
 
 // UnimplementedBasicServer can be embedded to have forward compatible implementations.
@@ -732,6 +825,9 @@ func (*UnimplementedBasicServer) SendMessageToMultiple(context.Context, *SendMes
 }
 func (*UnimplementedBasicServer) Broadcast(context.Context, *BroadcastReq) (*BroadcastReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Broadcast not implemented")
+}
+func (*UnimplementedBasicServer) BroadcastByTarget(context.Context, *BroadcastByTargetReq) (*BroadcastReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method BroadcastByTarget not implemented")
 }
 
 func RegisterBasicServer(s *grpc.Server, srv BasicServer) {
@@ -828,6 +924,24 @@ func _Basic_Broadcast_Handler(srv interface{}, ctx context.Context, dec func(int
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Basic_BroadcastByTarget_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BroadcastByTargetReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BasicServer).BroadcastByTarget(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/im.basic.Basic/BroadcastByTarget",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BasicServer).BroadcastByTarget(ctx, req.(*BroadcastByTargetReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Basic_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "im.basic.Basic",
 	HandlerType: (*BasicServer)(nil),
@@ -851,6 +965,10 @@ var _Basic_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Broadcast",
 			Handler:    _Basic_Broadcast_Handler,
+		},
+		{
+			MethodName: "BroadcastByTarget",
+			Handler:    _Basic_BroadcastByTarget_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
