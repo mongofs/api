@@ -493,7 +493,7 @@ var file_im_proto_rawDesc = []byte{
 	0x74, 0x61, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01,
 	0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c,
 	0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x3a,
-	0x02, 0x38, 0x01, 0x32, 0x8b, 0x03, 0x0a, 0x05, 0x42, 0x61, 0x73, 0x69, 0x63, 0x12, 0x28, 0x0a,
+	0x02, 0x38, 0x01, 0x32, 0xc0, 0x03, 0x0a, 0x05, 0x42, 0x61, 0x73, 0x69, 0x63, 0x12, 0x28, 0x0a,
 	0x04, 0x50, 0x69, 0x6e, 0x67, 0x12, 0x0f, 0x2e, 0x69, 0x6d, 0x2e, 0x62, 0x61, 0x73, 0x69, 0x63,
 	0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x1a, 0x0f, 0x2e, 0x69, 0x6d, 0x2e, 0x62, 0x61, 0x73, 0x69,
 	0x63, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x12, 0x32, 0x0a, 0x07, 0x4f, 0x6e, 0x6c, 0x69, 0x65,
@@ -518,8 +518,11 @@ var file_im_proto_rawDesc = []byte{
 	0x62, 0x61, 0x73, 0x69, 0x63, 0x2e, 0x42, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x42,
 	0x79, 0x57, 0x54, 0x49, 0x52, 0x65, 0x71, 0x1a, 0x18, 0x2e, 0x69, 0x6d, 0x2e, 0x62, 0x61, 0x73,
 	0x69, 0x63, 0x2e, 0x42, 0x72, 0x6f, 0x61, 0x64, 0x63, 0x61, 0x73, 0x74, 0x52, 0x65, 0x70, 0x6c,
-	0x79, 0x42, 0x06, 0x5a, 0x04, 0x67, 0x72, 0x70, 0x63, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x33,
+	0x79, 0x12, 0x33, 0x0a, 0x08, 0x54, 0x61, 0x67, 0x55, 0x73, 0x65, 0x72, 0x73, 0x12, 0x0f, 0x2e,
+	0x69, 0x6d, 0x2e, 0x62, 0x61, 0x73, 0x69, 0x63, 0x2e, 0x45, 0x6d, 0x70, 0x74, 0x79, 0x1a, 0x16,
+	0x2e, 0x69, 0x6d, 0x2e, 0x62, 0x61, 0x73, 0x69, 0x63, 0x2e, 0x4f, 0x6e, 0x6c, 0x69, 0x6e, 0x65,
+	0x73, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x42, 0x06, 0x5a, 0x04, 0x67, 0x72, 0x70, 0x63, 0x62, 0x06,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -555,14 +558,16 @@ var file_im_proto_depIdxs = []int32{
 	2, // 4: im.basic.Basic.SendMessageToMultiple:input_type -> im.basic.SendMessageToMultipleReq
 	5, // 5: im.basic.Basic.Broadcast:input_type -> im.basic.BroadcastReq
 	8, // 6: im.basic.Basic.BroadcastByWTI:input_type -> im.basic.BroadcastByWTIReq
-	0, // 7: im.basic.Basic.Ping:output_type -> im.basic.Empty
-	4, // 8: im.basic.Basic.Onliens:output_type -> im.basic.OnlinesReply
-	3, // 9: im.basic.Basic.SendMessage:output_type -> im.basic.SendMessageReply
-	3, // 10: im.basic.Basic.SendMessageToMultiple:output_type -> im.basic.SendMessageReply
-	6, // 11: im.basic.Basic.Broadcast:output_type -> im.basic.BroadcastReply
-	6, // 12: im.basic.Basic.BroadcastByWTI:output_type -> im.basic.BroadcastReply
-	7, // [7:13] is the sub-list for method output_type
-	1, // [1:7] is the sub-list for method input_type
+	0, // 7: im.basic.Basic.TagUsers:input_type -> im.basic.Empty
+	0, // 8: im.basic.Basic.Ping:output_type -> im.basic.Empty
+	4, // 9: im.basic.Basic.Onliens:output_type -> im.basic.OnlinesReply
+	3, // 10: im.basic.Basic.SendMessage:output_type -> im.basic.SendMessageReply
+	3, // 11: im.basic.Basic.SendMessageToMultiple:output_type -> im.basic.SendMessageReply
+	6, // 12: im.basic.Basic.Broadcast:output_type -> im.basic.BroadcastReply
+	6, // 13: im.basic.Basic.BroadcastByWTI:output_type -> im.basic.BroadcastReply
+	4, // 14: im.basic.Basic.TagUsers:output_type -> im.basic.OnlinesReply
+	8, // [8:15] is the sub-list for method output_type
+	1, // [1:8] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
 	1, // [1:1] is the sub-list for extension extendee
 	0, // [0:1] is the sub-list for field type_name
@@ -727,6 +732,8 @@ type BasicClient interface {
 	Broadcast(ctx context.Context, in *BroadcastReq, opts ...grpc.CallOption) (*BroadcastReply, error)
 	// 新增支持
 	BroadcastByWTI(ctx context.Context, in *BroadcastByWTIReq, opts ...grpc.CallOption) (*BroadcastReply, error)
+	// 获取到某个tag的用户
+	TagUsers(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*OnlinesReply, error)
 }
 
 type basicClient struct {
@@ -791,6 +798,15 @@ func (c *basicClient) BroadcastByWTI(ctx context.Context, in *BroadcastByWTIReq,
 	return out, nil
 }
 
+func (c *basicClient) TagUsers(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*OnlinesReply, error) {
+	out := new(OnlinesReply)
+	err := c.cc.Invoke(ctx, "/im.basic.Basic/TagUsers", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // BasicServer is the server API for Basic service.
 type BasicServer interface {
 	// Ping Service
@@ -805,6 +821,8 @@ type BasicServer interface {
 	Broadcast(context.Context, *BroadcastReq) (*BroadcastReply, error)
 	// 新增支持
 	BroadcastByWTI(context.Context, *BroadcastByWTIReq) (*BroadcastReply, error)
+	// 获取到某个tag的用户
+	TagUsers(context.Context, *Empty) (*OnlinesReply, error)
 }
 
 // UnimplementedBasicServer can be embedded to have forward compatible implementations.
@@ -828,6 +846,9 @@ func (*UnimplementedBasicServer) Broadcast(context.Context, *BroadcastReq) (*Bro
 }
 func (*UnimplementedBasicServer) BroadcastByWTI(context.Context, *BroadcastByWTIReq) (*BroadcastReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BroadcastByWTI not implemented")
+}
+func (*UnimplementedBasicServer) TagUsers(context.Context, *Empty) (*OnlinesReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method TagUsers not implemented")
 }
 
 func RegisterBasicServer(s *grpc.Server, srv BasicServer) {
@@ -942,6 +963,24 @@ func _Basic_BroadcastByWTI_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Basic_TagUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Empty)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BasicServer).TagUsers(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/im.basic.Basic/TagUsers",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BasicServer).TagUsers(ctx, req.(*Empty))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Basic_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "im.basic.Basic",
 	HandlerType: (*BasicServer)(nil),
@@ -969,6 +1008,10 @@ var _Basic_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "BroadcastByWTI",
 			Handler:    _Basic_BroadcastByWTI_Handler,
+		},
+		{
+			MethodName: "TagUsers",
+			Handler:    _Basic_TagUsers_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
