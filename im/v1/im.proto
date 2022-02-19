@@ -43,6 +43,10 @@ message BroadcastByWTIReq{
   map<string,bytes> data  =1;
 }
 
+// wti 的内容，获取到当前target人数分布
+message WTIDistributeReply{
+  map<string,int64> data  =1;
+}
 
 
 service Basic {
@@ -56,8 +60,10 @@ service Basic {
   rpc SendMessageToMultiple(SendMessageToMultipleReq) returns (SendMessageReply);
   // 广播
   rpc Broadcast(BroadcastReq) returns (BroadcastReply);
-  // 新增支持
-  rpc BroadcastByWTI(BroadcastByWTIReq) returns (BroadcastReply);
-  // 获取到某个tag的用户
-  rpc TagUsers(Empty)returns (OnlinesReply);
+
+  // 新增支持 v1.01
+  // 使用WTI方式进行用户广播，只支持群组下发
+  rpc WTIBroadcast(BroadcastByWTIReq) returns (BroadcastReply);
+  // 获取到某个tag下的用户总数量
+  rpc WTIDistribute(Empty)returns (WTIDistributeReply);
 }
