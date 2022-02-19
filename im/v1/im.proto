@@ -45,9 +45,15 @@ message BroadcastByWTIReq{
 
 // wti 的内容，获取到当前target人数分布
 message WTIDistributeReply{
-  map<string,int64> data  =1;
+  repeated WTIDistribute data =1 ;
 }
 
+
+message WTIDistribute {
+  string tag =1;  // 标签名称
+  int64 number =2 ; // 在线人数
+  int64 createTime =3 ; // 创建时间
+}
 
 service Basic {
   // Ping Service
