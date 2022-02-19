@@ -45,7 +45,7 @@ message BroadcastByWTIReq{
 
 // wti 的内容，获取到当前target人数分布
 message WTIDistributeReply{
-  repeated WTIDistribute data =1 ;
+  map<string,WTIDistribute>  data =1 ;
 }
 
 
